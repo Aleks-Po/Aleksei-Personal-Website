@@ -1,0 +1,1420 @@
+body {
+  margin: 0;
+}
+
+/* --------------------- HEADER ------------------- */
+
+header {
+  background-color: #d8d6d0;
+  width: 100%;
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+  padding: 1em 0;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.header-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1.5em;
+
+  h1 {
+    margin: 0;
+  }
+
+  a {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #201e12;
+
+    &:focus {
+      outline: 0.06em solid #ffffff;
+    }
+  }
+}
+
+.navbar {
+  display: flex;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.6em;
+  }
+
+  li {
+    display: flex;
+  }
+
+  a {
+    text-decoration: none;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    padding: 0.63em 0;
+    color: #64625f;
+    letter-spacing: 0.03em;
+    position: relative;
+
+    &:hover, &:active {
+      color: #201e12;
+    }
+
+    &:focus {
+      outline: 0.12em solid #ffffff;
+    }
+
+    &::after {
+      content: "";
+      background-color: #6b8e23;
+      width: 0;
+      height: 0.15em;
+      display: block;
+      transition: width 0.3s ease-out;
+      position: absolute;
+      top: 2em;
+    }
+
+    &:hover::after, &:focus::after {
+      width: 50%;
+    }
+  }
+}
+
+#home-active, #about-active, #resume-active, #portfolio-active, #contact-active {
+  color: #201e12;
+}
+
+#home-active::after, #about-active::after, #resume-active::after, #portfolio-active::after, #contact-active::after {
+  content: "";
+  background-color: #6b8e23;
+  height: 0.15em;
+  width: 50%;
+  display: block;
+}
+
+.burger-checkbox {
+  /* visibility: hidden; */
+  display: none;
+  margin: 0;
+}
+
+/* --------------------- END HEADER --------------- */
+
+/* --------------------- MAIN SECTION ------------- */
+
+main {
+  min-height: 95vh;
+}
+
+.main-home-page {
+  background: url(./assets/images/home_2.png) center right;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-wrap {
+  width: 1320px;
+  margin: 0 auto;
+}
+
+.owner-title-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 3em;
+    line-height: 1.17em;
+    color: #201e12;
+    margin: 0;
+    text-align: center;
+  }
+
+  h2 {
+    font-family: "Raleway", sans-serif;
+    font-size: 1.38em;
+    color: #54524f;
+    font-weight: 500;
+    line-height: 1.2em;
+    margin: 0.5em 0 0 0;
+    text-align: center;
+  }
+}
+
+.about, .skills {
+  margin: 2.5em 0 5em 0;
+}
+
+.resume, .portfolio, .contact {
+  margin: 2.5em 0 0 0;
+  padding: 0 0 7em 0;
+}
+
+.about-title, .skills-title, .resume-title, .portfolio-title, .contact-title {
+  margin: 0 0 2.5em 0;
+}
+
+.about-title h2, .skills-title h2, .resume-title h2, .portfolio-title h2, .contact-title h2 {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight: 700;
+  color: #201e12;
+  text-align: center;
+  margin: 0 0 1.5em 0;
+  position: relative;
+}
+
+.about-title h2::after, .skills-title h2::after, .resume-title h2::after, .portfolio-title h2::after, .contact-title h2::after {
+  content: "";
+  background-color: #6b8e23;
+  display: block;
+  width: 2em;
+  height: 0.1em;
+  position: absolute;
+  left: calc(50% - 1em);
+  z-index: -1;
+  position: absolute;
+  top: 1.5em;
+}
+
+.about-title p, .skills-title p, .resume-title p, .portfolio-title p, .contact-title p {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  font-weight: 400;
+  line-height: 1.6em;
+  color: #201e12;
+  margin: 0;
+}
+
+.owner-title-wrap a {
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  background-color: #6b8e23;
+  margin-top: 1.5em;
+  display: inline-block;
+  border-radius: 1.8em;
+  padding: 1em 2.8em;
+  font-weight: 600;
+  font-size: 0.85em;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease-out;
+    border-radius: 1.8em;
+    opacity: 0;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    transition: 0.5s;
+  }
+
+  &:focus {
+    outline: 0.15em solid #ffffff;
+    text-decoration: none;
+  }
+}
+
+.about-personal-wrap {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: max-content max-content 1fr;
+}
+
+.about-personal-title, .about-personal-details, .about-personal-text {
+  height: max-content;
+  margin: 0 0 0 3em;
+}
+
+.about-personal-img {
+  grid-area: 1 / 1 / 4 / 2;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.about-personal-title {
+  h3 {
+    font-family: "Raleway", sans-serif;
+    font-size: 1.62em;
+    color: #555555;
+    margin: 0 0 0.5em 0;
+  }
+
+  p {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #201e12;
+    margin: 0 0 1.8em 0;
+  }
+}
+
+.about-personal-details {
+  p {
+    margin: 0 0 1em 0;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #201e12;
+  }
+
+  display: flex;
+  margin: 0 0 0.8em 3em;
+}
+
+.list1, .list2 {
+  width: 50%;
+}
+
+.list1 ul, .list2 ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.list1 li {
+  font-family: "Open Sans", sans-serif;
+  color: #201e12;
+  margin: 0 0 1em 0;
+}
+
+.list2 {
+  li {
+    font-family: "Open Sans", sans-serif;
+    color: #201e12;
+    margin: 0 0 1em 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.about-personal-text p {
+  font-family: "Open Sans", sans-serif;
+  color: #201e12;
+  text-align: justify;
+  margin: 0;
+}
+
+.skills-chart-wrap {
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    font-family: "Open Sans", sans-serif;
+    color: #201e12;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 0.5em;
+  }
+}
+
+.left-chart, .right-chart {
+  width: 45%;
+  margin: 0 0 1.5em 0;
+}
+
+.html-block, .css-block, .photoshop-block, .sql-block, .illustrator-block, .office-block, .javascript-block {
+  margin: 0 0 1.5em 0;
+}
+
+.right {
+  float: right;
+}
+
+.knowledge-indicator-wrap {
+  background-color: #eaeaea;
+}
+
+.knowledge-indicator-item {
+  background-color: #6b8e23;
+  height: 0.5em;
+}
+
+.css-block .knowledge-indicator-item {
+  width: 90%;
+}
+
+.photoshop-block .knowledge-indicator-item {
+  width: 60%;
+}
+
+.sql-block .knowledge-indicator-item {
+  width: 15%;
+}
+
+.javascript-block .knowledge-indicator-item {
+  width: 10%;
+}
+
+.jquery-block .knowledge-indicator-item {
+  width: 15%;
+}
+
+.illustrator-block .knowledge-indicator-item {
+  width: 50%;
+}
+
+.office-block .knowledge-indicator-item {
+  width: 70%;
+}
+
+.resume-box-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.resume-box {
+  flex: 1;
+}
+
+.resume-box-title h3 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.65em;
+  font-weight: 400;
+  margin: 0.5em 0;
+  color: #201e12;
+}
+
+.resume-item {
+  padding: 0 0 1.5em 1.5em;
+  border-left: 0.15em solid #6b8e23;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0.9em;
+    height: 0.9em;
+    top: 0;
+    left: -0.6em;
+    border-radius: 50px;
+    background-color: #ffffff;
+    border: 0.15em solid #6b8e23;
+  }
+
+  h4 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.18em;
+    font-weight: 700;
+    color: #496018;
+    margin: 0 0 0.7em 0;
+    line-height: 0.9em;
+  }
+
+  h5 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    margin: 0 0 1em 0;
+    color: #6b8e23;
+    background: #f6fceb;
+    display: inline-block;
+    padding: 0.3em 0.7em;
+  }
+
+  ul {
+    margin: 0 0 1em 0;
+    padding: 0 0 0 1em;
+  }
+
+  li, p {
+    font-family: "Open Sans", sans-serif;
+    color: #201e12;
+    line-height: 1.5em;
+  }
+}
+
+.html-portfolio-wrap, .html-css-portfolio-wrap {
+  padding: 2.5em 0;
+}
+
+.html-portfolio-wrap h3, .html-css-portfolio-wrap h3 {
+  font-family: "Open Sans", sans-serif;
+  color: #201e12;
+  line-height: 1.5em;
+  font-size: 1.7em;
+  font-weight: 600;
+  margin: 0 0 1em 0;
+}
+
+.html-portfolio-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.portfolio-item {
+  width: 20em;
+  height: auto;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-wrap {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  transition: all ease-in-out 0.3s;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+
+  &::before {
+    content: "";
+    background: rgba(34, 34, 34, 0.6);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    bottom: 0;
+    transition: all ease-in-out 0.3s;
+    opacity: 0;
+  }
+
+  img {
+    transition: all ease-in-out 0.3s;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.2);
+    }
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.portfolio-info {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  a {
+    font-family: "Raleway", sans-serif;
+    color: #ffffff;
+    line-height: 1.5em;
+    text-decoration: none;
+    z-index: 2;
+    padding: 0.5em;
+    font-size: 1.5em;
+    font-weight: 500;
+    opacity: 0;
+    transition: all ease-in-out 0.3s;
+
+    h4 {
+      margin: 0;
+    }
+  }
+}
+
+.portfolio-wrap:hover .portfolio-info a {
+  opacity: 1;
+  transition: all ease-in-out 0.3s;
+  text-decoration: underline;
+}
+
+.contact-map {
+  margin: 0 0 3em 0;
+
+  iframe {
+    width: 100%;
+    height: 20em;
+  }
+}
+
+.contact-details-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-details-data {
+  flex: 1;
+  padding: 0 1em 0 0;
+}
+
+.contact-details-form {
+  flex: 2;
+  padding: 0 0 0 1em;
+}
+
+.address, .email, .phone {
+  display: grid;
+  grid-template-columns: max-content 2fr;
+  grid-template-rows: 1fr;
+  column-gap: 1em;
+  margin: 0 0 2.5em 0;
+}
+
+.icon-container {
+  grid-area: 1 / 1 / 3 / 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.address i, .email i {
+  background: #6b8e23;
+  height: 2.8em;
+  width: 2.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.phone i {
+  background: #6b8e23;
+  height: 2.8em;
+  width: 2.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  img {
+    width: 35%;
+    height: auto;
+  }
+}
+
+.address i img {
+  width: 38%;
+  height: auto;
+}
+
+.email i img {
+  width: 48%;
+  height: auto;
+}
+
+.address h4, .email h4, .phone h4 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.4em;
+  color: #201e12;
+  font-weight: 500;
+  margin: 0 0 0.1em 0;
+}
+
+.address p, .phone p, .email p, a, .phone p, a {
+  font-family: "Open Sans", sans-serif;
+  color: #64625f;
+  margin: 0;
+}
+
+.contact-details-form * {
+  pointer-events: none;
+}
+
+form {
+  width: 100%;
+  opacity: 0.7;
+}
+
+.name-email-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-name-box {
+  padding: 0 1em 1.4em 0;
+}
+
+.input-email-box {
+  padding: 0 0 1.4em 1em;
+}
+
+.input-subject-box, .input-textarea-box {
+  padding: 0 0 1.4em 0;
+}
+
+.input-name-box, .input-email-box, .input-subject-box .input-textarea-box {
+  width: 100%;
+}
+
+.input-name-box input, .input-email-box input, .input-subject-box input {
+  border-radius: 0.4em;
+  height: 3em;
+  font-size: 0.9em;
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  line-height: 1.5em;
+  border: 0.09em #d9d7d4 solid;
+  padding: 0.37em 0.75em;
+  box-sizing: border-box;
+  outline-style: none;
+  color: #201e12;
+}
+
+.input-textarea-box textarea {
+  border-radius: 0.4em;
+  font-size: 0.9em;
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  line-height: 1.5em;
+  border: 0.09em #d9d7d4 solid;
+  box-sizing: border-box;
+  outline-style: none;
+  color: #201e12;
+  padding: 0.8em 0.9em;
+  font-family: "Open Sans", sans-serif;
+}
+
+.input-name-box input:focus, .input-email-box input:focus, .input-subject-box input:focus, .input-textarea-box textarea:focus {
+  border-color: #6b8e23;
+}
+
+.form-button {
+  text-align: center;
+
+  button {
+    background-color: #6b8e23;
+    padding: 1em 2.8em;
+    border-radius: 1.8em;
+    font-size: 0.85em;
+    font-weight: 500;
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    border: 0;
+    cursor: pointer;
+    cursor: not-allowed;
+  }
+}
+
+.notice {
+  font-family: "Open Sans", sans-serif;
+  color: #d9534f;
+  font-weight: bold;
+  margin-top: 1.2em;
+  text-align: center;
+}
+
+/* --------------------- END MAIN SECTION ------------------- */
+
+/* --------------------- FOOTER ------------------- */
+
+footer {
+  padding: 1.6em 0em;
+  background-color: #d8d6d0;
+}
+
+.footer-wrap {
+  margin: 0 1.5em;
+}
+
+.copyright {
+  font-family: "Open Sans", sans-serif;
+  color: #201e12;
+  font-size: 1em;
+  text-align: center;
+}
+
+/* --------------------- END FOOTER ------------------- */
+
+/* -------------------- DESKTOP DEVICES -------------- */
+@media (max-width: 1400px) {
+  .main-wrap {
+    width: 1140px;
+  }
+
+  .about-personal-title p {
+    margin: 0 0 1.6em 0;
+  }
+
+  .list1 li, .list2 li {
+    margin: 0 0 0.8em 0;
+  }
+}
+
+/* -------------------- LAPTOP L DEVICES -------------- */
+@media (max-width: 1200px) {
+  header {
+    padding: 1.1em 0;
+  }
+
+  .navbar a {
+    padding: 0.58em 0;
+  }
+
+  .main-wrap {
+    width: 960px;
+  }
+
+  .owner-title-wrap {
+    h1 {
+      font-size: 2.5em;
+    }
+
+    h2 {
+      font-size: 1.3em;
+    }
+
+    a {
+      font-size: 0.82em;
+      padding: 1em 2.5em;
+      font-weight: 500;
+    }
+  }
+
+  .about-title h2, .skills-title h2, .resume-title h2, .portfolio-title h2, .contact-title h2 {
+    font-size: 1.8em;
+  }
+
+  .portfolio-info a {
+    font-size: 1.4em;
+  }
+
+  .portfolio-item {
+    width: 18em;
+  }
+
+  .address h4, .email h4, .phone h4 {
+    font-size: 1.3em;
+  }
+
+  .copyright {
+    font-size: 0.9em;
+  }
+
+  footer {
+    padding: 1.76em 0em;
+  }
+}
+
+/* -------------------- LAPTOP DEVICES -------------- */
+@media (max-width: 992px) {
+  header {
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  .header-wrap h1 {
+    font-size: 1.9em;
+  }
+
+  .main-home-page {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(./assets/images/home_2.png);
+    background-position: top;
+    background-size: cover;
+  }
+
+  .main-wrap {
+    width: 720px;
+  }
+
+  .owner-title-wrap {
+    h1 {
+      font-size: 2.3em;
+      z-index: 1;
+    }
+
+    h2 {
+      font-size: 1.2em;
+    }
+
+    a {
+      
+      padding: 1em 2.3em;
+    }
+  }
+
+  .about-personal-img {
+    grid-area: 1 / 1 / 3 / 2;
+  }
+
+  .about-personal-title {
+    margin: 0 0 0 0.5em;
+  }
+
+  .about-personal-details {
+    margin: 0 0 0 0.5em;
+    justify-content: space-between;
+  }
+
+  .list1, .list2 {
+    width: max-content;
+  }
+
+  .about-personal-text {
+    margin: 1.5em 0 0 0;
+    grid-area: 3 / 1 / 4 / 3;
+  }
+
+  .resume-box-container {
+    flex-direction: column;
+  }
+
+  .resume-box {
+    padding-bottom: 2em;
+  }
+
+  .resume-box-title h3 {
+    margin: 0.5em 0 0.8em 0;
+    font-size: 1.45em;
+  }
+
+  .resume-item h4 {
+    font-size: 1.1em;
+  }
+
+  .html-portfolio-wrap h3, .html-css-portfolio-wrap h3 {
+    font-size: 1.6em;
+  }
+
+  .html-portfolio-container {
+    flex-wrap: wrap;
+  }
+
+  .portfolio-item {
+    margin-bottom: 4em;
+  }
+
+  .portfolio-info a {
+    font-size: 1.3em;
+  }
+
+  .address i, .email i, .phone i {
+    width: 2.6em;
+    height: 2.6em;
+  }
+
+  .address h4, .email h4, .phone h4 {
+    font-size: 1.25em;
+  }
+
+  .address p, .email p, .phone p {
+    font-size: 0.9em;
+  }
+
+  .input-name-box {
+    padding-right: 0.5em;
+  }
+
+  .input-email-box {
+    padding-left: 0.5em;
+  }
+
+  .form-button button {
+    padding: 0.9em 2.3em;
+  }
+}
+
+/* -------------------- TABLET DEVICES -------------- */
+@media (max-width: 768px) {
+  header {
+    padding: 1em 0;
+  }
+
+  .header-wrap h1 {
+    font-size: 1.8em;
+  }
+
+  .navbar {
+    li {
+      justify-content: center;
+    }
+
+    a {
+      padding: 0.5em 0;
+      color: #201e12;
+      font-weight: 600;
+      position: relative;
+
+      &:hover, &:active {
+        color: #6b8e23;
+      }
+
+      &:focus {
+        outline: 0.12em solid #201e12;
+      }
+    }
+  }
+
+  #about-active::after, #home-active::after, #resume-active::after, #portfolio-active::after {
+    content: "";
+    background-color: #6b8e23;
+    height: 0.15em;
+    width: 50%;
+    display: block;
+  }
+
+  .burger-checkbox {
+    position: absolute;
+    visibility: hidden;
+    margin: 0;
+  }
+
+  .burger {
+    cursor: pointer;
+    z-index: 1;
+    display: block;
+    position: relative;
+    border: none;
+    background: transparent;
+    width: 1.8em;
+    height: 1.6em;
+
+    &::before, &::after {
+      content: '';
+      left: 0;
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 0.21em;
+      border-radius: 10px;
+      background: #201e12;
+    }
+
+    &::before {
+      top: 3px;
+      box-shadow: 0 8px 0 #201e12;
+      transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
+    }
+
+    &::after {
+      bottom: 3px;
+      transition: bottom .3s .15s, transform .3s;
+    }
+  }
+
+  .burger-checkbox:checked + .burger {
+    &::before {
+      top: 11px;
+      transform: rotate(45deg);
+      box-shadow: 0 5px 0 rgba(32, 30, 18, 0);
+      transition: box-shadow .15s, top .3s, transform .3s .15s;
+    }
+
+    &::after {
+      bottom: 11px;
+      transform: rotate(-45deg);
+      transition: bottom .3s, transform .3s .15s;
+    }
+  }
+
+  #burger-list {
+    top: 4.1em;
+    right: 25%;
+    position: fixed;
+    background: rgb(255, 255, 255);
+    transform: translate(150%);
+    border-radius: 0.6em;
+    transition: .3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 17em;
+    width: 50%;
+    gap: 0.7em;
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .burger-checkbox:checked ~ #burger-list {
+    transform: translateX(0);
+  }
+
+  .main-wrap {
+    width: 540px;
+  }
+
+  .about-title h2, .skills-title h2, .resume-title h2, .portfolio-title h2, .contact-title h2 {
+    font-size: 1.7em;
+  }
+
+  .owner-title-wrap {
+    h1 {
+      font-size: 2em;
+    }
+
+    a {
+      padding: 1em 2.1em;
+    }
+  }
+
+  .about-personal-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-personal-title {
+    h3 {
+      font-size: 1.6em;
+    }
+
+    margin: 1.8em 0 0 0;
+  }
+
+  .about-personal-details, .about-personal-text {
+    margin: 1.8em 0 0 0;
+  }
+
+  .about-personal-title p {
+    margin: 0;
+  }
+
+  .about-personal-details {
+    justify-content: space-between;
+  }
+
+  .list1, .list2 {
+    width: max-content;
+  }
+
+  .skills-chart-wrap {
+    flex-direction: column;
+  }
+
+  .left-chart, .right-chart {
+    width: 100%;
+    margin: 0 0 1.5em 0;
+  }
+
+  .html-portfolio-wrap h3, .html-css-portfolio-wrap h3 {
+    font-size: 1.5em;
+  }
+
+  .portfolio-item {
+    width: 15.5em;
+  }
+
+  .portfolio-info a {
+    font-size: 1.25em;
+  }
+
+  .contact-map iframe {
+    height: 15em;
+  }
+
+  .contact-details-wrap {
+    flex-direction: column;
+  }
+
+  .contact-details-data, .contact-details-form {
+    padding: 0;
+  }
+
+  .address i, .email i, .phone i {
+    width: 2.5em;
+    height: 2.5em;
+  }
+
+  .address h4, .email h4, .phone h4 {
+    font-size: 1.2em;
+  }
+
+  .input-name-box input, .input-email-box input, .input-subject-box input {
+    height: 2.7em;
+  }
+
+  .form-button button {
+    padding: 0.9em 2em;
+  }
+
+  .copyright {
+    font-size: 0.85em;
+  }
+
+  footer {
+    padding: 1.6em 0em;
+  }
+}
+
+/* -------------------- MOBILE DEVICES -------------- */
+@media (max-width: 576px) {
+  header {
+    padding: 0.9em 0;
+  }
+
+  .header-wrap {
+    align-items: center;
+    margin: 0 1.5em;
+
+    h1 {
+      font-size: 1.7em;
+    }
+  }
+
+  .navbar {
+    li {
+      justify-content: center;
+    }
+
+    a {
+      padding: 0.65em 0;
+      color: #201e12;
+      font-weight: 600;
+
+      &:hover, &:active {
+        color: #6b8e23;
+      }
+
+      &:focus {
+        outline: 0.12em solid #201e12;
+      }
+    }
+  }
+
+  #home-active {
+    color: #6b8e23;
+  }
+
+  #about-active {
+    color: #6b8e23;
+
+    &::after {
+      content: "";
+      background-color: #6b8e23;
+      height: 0.15em;
+      width: 50%;
+      display: block;
+    }
+  }
+
+  #home-active::after {
+    content: "";
+    background-color: #6b8e23;
+    height: 0.15em;
+    width: 50%;
+    display: block;
+  }
+
+  .burger-checkbox {
+    position: absolute;
+    visibility: hidden;
+    margin: 0;
+  }
+
+  .burger {
+    cursor: pointer;
+    z-index: 1;
+    display: block;
+    position: relative;
+    border: none;
+    background: transparent;
+    width: 1.8em;
+    height: 1.6em;
+
+    &::before, &::after {
+      content: '';
+      left: 0;
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 0.21em;
+      border-radius: 10px;
+      background: #201e12;
+    }
+
+    &::before {
+      top: 3px;
+      box-shadow: 0 8px 0 #201e12;
+      transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
+    }
+
+    &::after {
+      bottom: 3px;
+      transition: bottom .3s .15s, transform .3s;
+    }
+  }
+
+  .burger-checkbox:checked + .burger {
+    &::before {
+      top: 11px;
+      transform: rotate(45deg);
+      box-shadow: 0 5px 0 rgba(32, 30, 18, 0);
+      transition: box-shadow .15s, top .3s, transform .3s .15s;
+    }
+
+    &::after {
+      bottom: 11px;
+      transform: rotate(-45deg);
+      transition: bottom .3s, transform .3s .15s;
+    }
+  }
+
+  #burger-list {
+    top: 3.8em;
+    right: 25%;
+    position: fixed;
+    background: rgb(255, 255, 255);
+    transform: translate(150%);
+    border-radius: 0.6em;
+    transition: .3s;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 0.7em;
+  }
+
+  .burger-checkbox:checked ~ #burger-list {
+    transform: translateX(0);
+  }
+
+  .main-home-page {
+    background-position: top right;
+  }
+
+  main {
+    padding: 0 1.5em;
+  }
+
+  .main-wrap {
+    width: 100%;
+  }
+
+  .owner-title-wrap {
+    h1 {
+      font-size: 1.7em;
+    }
+
+    h2 {
+      font-size: 1.09em;
+    }
+
+    a {
+      padding: 1em 1.8em;
+    }
+  }
+
+  .about-title h2, .skills-title h2, .resume-title h2, .portfolio-title h2, .contact-title h2 {
+    font-size: 1.6em;
+  }
+
+  .about-title p, .skills-title p, .resume-title p, .portfolio-title p, .contact-title p {
+    text-align: justify;
+  }
+
+  .about-personal-title h3 {
+    font-size: 1.5em;
+  }
+
+  .about-personal-details {
+    flex-direction: column;
+  }
+
+  .html-portfolio-wrap h3, .html-css-portfolio-wrap h3 {
+    font-size: 1.4em;
+  }
+
+  .portfolio-item {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #movie_ranking, #party_invite, #resume, #web_design_agency, #plaza_hotel, #travel_website {
+    background-position: left top;
+    background-size: cover;
+    height: 12em;
+  }
+
+  #movie_ranking {
+    background-image: url(./assets/images/aleks-po.github.mobile_movie_ranking.jpeg);
+  }
+
+  #party_invite {
+    background-image: url(./assets/images/aleks-po.github.mobile_party_invite.jpeg);
+  }
+
+  #resume {
+    background-image: url(./assets/images/aleks-po.github.mobile_resume.jpeg);
+  }
+
+  #web_design_agency {
+    background-image: url(./assets/images/aleks-po.github.mobile_web_design_agency.jpeg);
+  }
+
+  #plaza_hotel {
+    background-image: url(./assets/images/aleks-po.github.mobile_plaza_hotel.jpeg);
+  }
+
+  #travel_website {
+    background-image: url(./assets/images/aleks-po.github.mobile_travel_website.jpeg);
+  }
+
+  .portfolio-item:hover .portfolio-wrap {
+    transform: scale(1.2);
+  }
+
+  .portfolio-wrap img {
+    display: none;
+  }
+
+  .portfolio-info a {
+    font-size: 1.1em;
+  }
+
+  .contact-map iframe {
+    height: 12em;
+  }
+
+  .address i, .email i, .phone i {
+    width: 2.3em;
+    height: 2.3em;
+  }
+
+  .address h4, .email h4, .phone h4 {
+    font-size: 1.15em;
+  }
+
+  .name-email-container {
+    flex-direction: column;
+  }
+
+  .input-name-box {
+    padding-right: 0;
+  }
+
+  .input-email-box {
+    padding-left: 0;
+  }
+
+  .form-button button {
+    padding: 0.8em 1.8em;
+  }
+
+  footer {
+    padding: 1.4em 0em;
+  }
+
+  .footer-wrap {
+    margin: 0 1em;
+  }
+}
