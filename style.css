@@ -1235,7 +1235,7 @@ footer {
     overflow: hidden;
   }
 
-  #movie_ranking, #party_invite, #resume, #web_design_agency, #plaza_hotel, #travel_website {
+  #movie_ranking, #party_invite, #resume, #event_website, #plaza_hotel, #travel_website {
     background-position: left top;
     background-size: cover;
     height: 12em;
@@ -1253,8 +1253,8 @@ footer {
     background-image: url(./assets/images/aleks-po.github.mobile_resume.jpeg);
   }
 
-  #web_design_agency {
-    background-image: url(./assets/images/aleks-po.github.mobile_web_design_agency.jpeg);
+  #event_website {
+    background-image: url(./assets/images/aleks-po.github.event_website.jpeg);
   }
 
   #plaza_hotel {
